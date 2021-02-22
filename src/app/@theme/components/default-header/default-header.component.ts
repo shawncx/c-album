@@ -9,11 +9,11 @@ import { NbAuthService } from '@nebular/auth';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ngx-header',
-  styleUrls: ['./header.component.scss'],
-  templateUrl: './header.component.html',
+  selector: 'ngx-default-header',
+  styleUrls: ['./default-header.component.scss'],
+  templateUrl: './default-header.component.html',
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class DefaultHeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;

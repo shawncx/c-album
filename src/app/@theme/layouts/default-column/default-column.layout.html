@@ -1,0 +1,13 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+      <ngx-default-header></ngx-default-header>
+    </nb-layout-header>
+    
+    <nb-layout-column>
+      <ng-content select="router-outlet"></ng-content>
+    </nb-layout-column>
+
+    <nb-layout-footer fixed>
+      <ngx-default-footer></ngx-default-footer>
+    </nb-layout-footer>
+  </nb-layout>

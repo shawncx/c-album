@@ -20,12 +20,16 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { AuthGuard } from './auth-guard.service';
+import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     NbSidebarModule.forRoot(),
@@ -39,8 +43,17 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [NbDummyAuthStrategy.setup({
+          name: 'email'
+        })],
+      forms: {}
+    })
   ],
   bootstrap: [AppComponent],
+  providers: [
+    AuthGuard
+  ]
 })
 export class AppModule {
 }

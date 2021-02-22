@@ -17,6 +17,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 
 import {
+  DefaultHeaderComponent,
+  DefaultFooterComponent,
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
@@ -33,6 +35,7 @@ import {
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  DefaultColumnLayoutComponent
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -61,6 +64,9 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  DefaultColumnLayoutComponent,
+  DefaultHeaderComponent,
+  DefaultFooterComponent
 ];
 const PIPES = [
   CapitalizePipe,
