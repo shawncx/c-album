@@ -23,6 +23,8 @@ import {
 import { AuthGuard } from './auth-guard.service';
 import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,11 +50,19 @@ import { FormsModule } from '@angular/forms';
           name: 'email'
         })],
       forms: {}
-    })
+    }),
+    GalleryModule,
+    LightboxModule
   ],
   bootstrap: [AppComponent],
   providers: [
-    AuthGuard
+    AuthGuard,
+    {
+      provide: LIGHTBOX_CONFIG,
+      useValue: {
+        keyboardShortcuts: false
+      }
+    }
   ]
 })
 export class AppModule {

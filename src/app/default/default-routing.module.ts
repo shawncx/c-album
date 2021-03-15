@@ -13,7 +13,12 @@ const routes: Routes = [
         loadChildren: () => import('./miscellaneous/miscellaneous.module')
           .then(m => m.MiscellaneousModule),
       },
-      { path: '', redirectTo: 'miscellaneous/404', pathMatch: 'full' },
+      {
+        path: 'gallery',
+        loadChildren: () => import('./gallery/gallery.module')
+          .then(m => m.NgxGalleryModule),
+      },
+      { path: '', redirectTo: 'gallery/default', pathMatch: 'full' },
       { path: '**', redirectTo: 'miscellaneous/404' },
     ]
   }

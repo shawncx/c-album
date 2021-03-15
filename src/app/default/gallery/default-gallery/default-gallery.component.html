@@ -1,0 +1,6 @@
+<div class="container" gallerize="gallery">
+    <img *ngFor="let image of items"
+         src="{{image.data.thumb}}"
+         [attr.imageSrc]="image.data.src">
+  </div>
+  
